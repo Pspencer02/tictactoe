@@ -64,38 +64,38 @@ cellElements[(row * 3) + col].classList.add("circle")
 
     }
 }
-//Winner 
-function checkResult(){
+// Winner
+function checkResult() {
     // Check rows and columns 
     for (let i = 0; i < 3; i++) {
         let rowSum = boardData[i][0] + boardData[i][1] + boardData[i][2]; // Sum of row
         let colSum = boardData[0][i] + boardData[1][i] + boardData[2][i]; // Sum of column
-        if (rowSum === 3 || colSum === 3 ){
+        if (rowSum === 3 || colSum === 3) {
             // Player 1 wins
             console.log("Player 1 wins");
-         gameEnd(1)
-         return
-        } else if (rowSum === -3 || colSum === -3 ){
+            gameEnd(1);
+            return;
+        } else if (rowSum === -3 || colSum === -3) {
             // Player 2 wins
             console.log("Player 2 wins");
-           gameEnd(2)
-           return
+            gameEnd(2);
+            return;
         }
     }
-    
+
     // Check diagonals
     let diaSum1 = boardData[0][0] + boardData[1][1] + boardData[2][2]; // Sum of main diagonal
     let diaSum2 = boardData[0][2] + boardData[1][1] + boardData[2][0]; // Sum of anti-diagonal
-    if (diaSum1 === 3 || diaSum2 === 3 ){
+    if (diaSum1 === 3 || diaSum2 === 3) {
         // Player 1 wins
         console.log("Player 1 wins");
-gameEnd(1)
-return
-    } else if (diaSum1 === -3 || diaSum2 === -3 ){
+        gameEnd(1);
+        return;
+    } else if (diaSum1 === -3 || diaSum2 === -3) {
         // Player 2 wins
         console.log("Player 2 wins");
-       gameEnd(2)
-       return
+        gameEnd(2);
+        return;
     }
 
     // Check for a tie
@@ -107,14 +107,14 @@ return
                 break;
             }
         }
-        if (isTie) break;
+        if (!isTie) break;
     }
     if (isTie) {
         console.log("It's a tie!");
         gameEnd(0);
-        return
     }
 }
+
 //game over 
 function gameEnd(winner) {
     gameOver = true;
