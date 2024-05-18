@@ -1,0 +1,58 @@
+{
+    padding: 0
+}
+
+body{  /* creating a centered grid using a png */
+    background-color: darkslategray;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+gap: 1rem;
+
+}
+
+
+.board { /*creating the board*/
+    width: 400px;
+    height: 400px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-image: url(grid.png);
+    background-size: cover;
+    border-radius: 3rem;
+    box-shadow: 0 0 15px 5px rgba( 50, 50 , 50);
+    border-color: black;
+}
+
+.board:hover{ /* adding a pointer when hovering over the board*/
+    cursor: pointer;
+
+}
+
+.circle {
+    background-image: url('circle.png');
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cross {
+    background-image: url("cross.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+button{
+    background-color:rgb(170, 81, 111);
+    border: none;
+    border-radius: 1rem;
+    font-family: "Franklin Gothic Medium";
+    font-size: large;
+}
+button:hover {
+cursor: pointer;
+background-color: azure;
+}
